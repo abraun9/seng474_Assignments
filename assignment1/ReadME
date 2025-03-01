@@ -1,0 +1,64 @@
+# Decision Trees, Random Forests, Boosted Trees, and K-Fold Cross-Validation
+
+## Overview
+This repository contains Jupyter notebooks demonstrating the implementation of Decision Trees, Random Forests, Boosted Trees, and K-Fold Cross-Validation using Python's `scikit-learn` library. These models are applied to classification problems, evaluating their performance through error analysis and hyperparameter tuning.
+
+## File Descriptions
+
+### 1. Decision Trees (`decision_trees.ipynb`)
+- **Dataset**: `spambase_augmented.csv`
+- **Implementation Details**:
+  - Loads and preprocesses data.
+  - Trains decision tree classifiers using Gini impurity and Entropy criteria.
+  - Splits data into training, validation, and test sets.
+  - Evaluates model performance using accuracy scores.
+  - Tunes `max_depth` to find the optimal depth for minimizing test error.
+  - Implements reduced error pruning to prevent overfitting.
+  - Visualizes decision trees using `plot_tree()`.
+
+### 2. Random Forests (`random_forest.ipynb`)
+- **Datasets**: `train_data.csv`, `test_data.csv`
+- **Implementation Details**:
+  - Trains Random Forest classifiers using Gini and Entropy criteria.
+  - Tunes hyperparameters such as `n_estimators`, `max_depth`, `max_features`, and `max_samples`.
+  - Analyzes training and test errors to assess model performance.
+  - Visualizes the effect of varying hyperparameters on error rates.
+  - Computes the average depth of trees within the forest.
+
+### 3. Boosted Trees (`boosted_trees.ipynb`)
+- **Datasets**: `train_data.csv`, `test_data.csv`
+- **Implementation Details**:
+  - Implements AdaBoost using Decision Trees as weak learners.
+  - Tunes hyperparameters such as `n_estimators`, `max_depth`, and `learning_rate`.
+  - Compares performance of models using different boosting iterations.
+  - Evaluates the impact of training data proportions on model accuracy.
+  - Visualizes error trends as hyperparameters are varied.
+
+### 4. K-Fold Cross-Validation (`k_fold_cross_validation.ipynb`)
+- **Implementation Details**:
+  - Splits data into `k` folds for robust performance evaluation.
+  - Applies cross-validation to Decision Trees, Random Forests, and Boosted Trees.
+  - Reports mean and standard deviation of accuracy scores across folds.
+  - Helps identify the best model configuration.
+
+## Running the Code
+1. Install dependencies (if not already installed):
+   ```bash
+   pip install numpy pandas scikit-learn matplotlib
+   ```
+2. Place dataset (`spambase_augmented.csv`) in the same directory as the notebooks.
+3. Open a Jupyter Notebook and run:
+   ```bash
+   jupyter notebook
+   ```
+4. Execute cells in the respective notebooks to reproduce results.
+
+## Attribution
+- `scikit-learn` documentation was referenced for implementation guidance.
+- Datasets were sourced from [UCI Repository](https://github.com/user/repo/blob/branch/other_file.md)
+
+## Notes
+- The notebooks are designed to be run sequentially.
+- Ensure that dataset files are correctly placed before execution.
+- For hyperparameter tuning, some iterations may take longer due to computational complexity.
+
